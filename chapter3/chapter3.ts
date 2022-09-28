@@ -1,18 +1,26 @@
-//lesson21
-const age: number = 20;
+//lesson 22
 
-switch (age) {
-    case 20: //waterfall
-    case 19:
-        // code block
-        console.log("Đã đi làm")
-        break;
-    case 12:
-        console.log("Đã đi làm sinh viên")
-        break;
-    default:
-        // code block
-        console.log(">>> run default")
+for (let i = 0; i < 10; i++) {
+    console.log(">> i= ", i);
+    //i = 9 => 10
 }
 
-//////
+let i1 = 0;
+for (; i1 < 10; i1++) {
+    console.log(i1);
+}
+
+
+for (let i = 0; ; i++) {
+    console.log(i);
+    if (i > 9) break; // cần có if/break để không khiến vòng lặp chạy vô hạn
+}
+
+
+let i = 0;
+for (; ;) {
+    console.log(i);
+    i++;
+    if (i > 9) break;
+}
+

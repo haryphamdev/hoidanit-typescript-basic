@@ -1,3 +1,31 @@
+
+//lesson 24
+let counter2 = 6;
+do {
+    console.log("counter = ", counter2);
+    if (counter2 % 2 === 1) break;
+    counter2++;
+} while (counter2 < 5);
+
+
+//lesson 23
+// let counter = 0;
+
+// while (counter < 5) {
+//     console.log("counter = ", counter);
+//     if (counter % 2 === 1) break;
+//     counter++;
+// }
+
+//lesson 23
+let counter = 0;
+
+while (counter < 5) {
+    console.log("counter = ", counter);
+    if (counter % 2 === 1) break;
+    counter++;
+}
+
 //lesson 22
 
 for (let i = 0; i < 10; i++) {

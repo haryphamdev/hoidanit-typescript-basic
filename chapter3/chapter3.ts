@@ -1,28 +1,35 @@
-//lesson 25
-let products = [
-    { name: 'phone', price: 700 }, //0
-    { name: 'tablet', price: 900 }, //1
-    { name: 'laptop', price: 1200 }
-];
+//lesson 26
+for (let index = 0; index < 9; index++) {
 
-let discount1 = 0;
-let product = products[1];
-switch (product.name) {
-    case 'phone':
-        discount1 = 5;
-        break;
-    case 'tablet':
-        discount1 = 10;
-    // break;
-    case 'laptop':
-        discount1 = 15;
-    // break;
-    default:
-        discount1 = 100;
+    // if index is odd, skip it
+    if (index % 2 === 1) { continue; } // 1; 0
+
+    // the following code will be skipped for odd numbers
+    // console.log(index);
 }
-console.log(`There is a ${discount1}% on ${product.name}.`);
 
 
-// show the products
+
+// let index = -1;
+
+// while (index < 9) {
+//     index = index + 1;
+//     if (index % 2)
+//         continue;
+//     console.log(index);
+// }
+
+
+let index = 9;
+let count = 0;
+
+do {
+    index += 1;
+
+    if (index % 2)
+        continue;
+    count += 1;
+} while (index < 99);
+console.log(count); // 45
 
 

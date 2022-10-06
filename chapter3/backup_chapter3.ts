@@ -1,12 +1,22 @@
+//lesson 29: optional params
+
+const sum5 = (x: number, y: number, z?: number) => {
+    if (z) return x + y + z;
+    return x + y;
+}
+
+console.log(">>> check sum 4 = ", sum5(2, 5),
+    sum5(1, 2, 3)) //NaN : not a number;; null/ undefined
+
 //lesson 28
 
 const sum3 = (x: number, y: number): number => {
     return x + y;
 }
 
-function sum4(x: number, y: number): number {
-    return x + y;
-}
+// function sum4(x: number, y: number): number {
+//     return x + y;
+// }
 
 console.log(">> check sum3 = ", sum3(1, 10))
 

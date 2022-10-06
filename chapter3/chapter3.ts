@@ -1,35 +1,15 @@
-//lesson 26
-for (let index = 0; index < 9; index++) {
-
-    // if index is odd, skip it
-    if (index % 2 === 1) { continue; } // 1; 0
-
-    // the following code will be skipped for odd numbers
-    // console.log(index);
-}
-
-
-
-// let index = -1;
-
-// while (index < 9) {
-//     index = index + 1;
-//     if (index % 2)
-//         continue;
-//     console.log(index);
+//lesson 27
+// function sum(a , b) {
+//     return a + b;
 // }
 
+function sum(a: number, b: number) {
+    return a + b;
+}
 
-let index = 9;
-let count = 0;
+//anonymous function
+const sum2 = (a: number, b: number) => {
+    return a + b;
+}
 
-do {
-    index += 1;
-
-    if (index % 2)
-        continue;
-    count += 1;
-} while (index < 99);
-console.log(count); // 45
-
-
+console.log(">>> check sum: ", sum2(6, 9))

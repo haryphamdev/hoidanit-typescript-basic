@@ -1,3 +1,34 @@
+//lesson 28
+
+const sum3 = (x: number, y: number): number => {
+    return x + y;
+}
+
+function sum4(x: number, y: number): number {
+    return x + y;
+}
+
+console.log(">> check sum3 = ", sum3(1, 10))
+
+let a = 10;//number
+a = sum3(1, 10) //string
+
+//lesson 27
+// function sum(a , b) {
+//     return a + b;
+// }
+
+function sum(a: number, b: number) {
+    return a + b;
+}
+
+//anonymous function () => {}
+const sum2 = (a: number, b: number) => {
+    return a + b;
+}
+
+console.log(">>> check sum: ", sum2(6, 9))
+
 //lesson 26
 for (let index = 0; index < 9; index++) {
 

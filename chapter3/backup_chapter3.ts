@@ -1,3 +1,93 @@
+//lesson 32
+
+function addNumbers(a: number, b: number): number {
+    return a + b;
+}
+
+function addStrings(a: string, b: string): string {
+    return a + b;
+}
+
+// 2 functions làm nhiệm vụ tương tự nhau => có thể gồm thành 1 với union type
+function add111(a: number | string, b: number | string) {
+    if (typeof a === 'number' && typeof b === 'number')
+        return a + b;
+
+    if (typeof a === 'string' && typeof b === 'string')
+        return a + b;
+}
+
+//overloading
+function addNew(a: number, b: number): number;
+
+function addNew(a: string, b: string): string;
+
+function addNew(a: any, b: any) {
+    return a + b;
+}
+
+// console.log(">>> check add new: ", addNew(6, 9), addNew(" Hoi Dan IT", " & Eric"))
+
+
+class Counter {
+    private current: number = 0;
+    count(): number;
+    count(target: number): number[];
+    count(target?: number): number | number[] {
+        if (target) {
+            let values: number[] = [];
+            for (let start = this.current; start <= target; start++) {
+                values.push(start);
+            }
+            return values;
+        }
+        return ++this.current;
+    }
+}
+
+let counter111 = new Counter();
+
+console.log(counter111.count()); // return a number
+console.log(counter111.count(20)); // return an array
+
+//lesson 31
+//spread syntax vs rest => copy all
+function getTotal(...numbers: number[]): number {
+    let total = 0;
+    numbers.forEach((num) => total += num);
+    //[10, 20].forEach((num) => total += num);
+    //[].forEach((num) => total += num);
+    return total;
+}
+
+// console.log(getTotal()); // 0
+// console.log(getTotal(10, 20)); // 30
+// console.log(getTotal(10, 20, 30)); // 60
+
+function multiply(n: number, ...m: number[]) {
+    let a = [69, 96, 3, 4].map((x) => {
+        console.log("check x = ", x)
+        return n * x
+    });
+
+    return m.map((x) => n * x);
+}
+// 'a' gets value [10, 20, 30, 40]
+// const test31 = multiply(15, 69, 96, 3, 4);
+
+// console.log(">>> check test31 = ", test31)
+
+
+function Greet(greeting: string, ...names: string[]) {
+    return greeting + " " + names.join(", ") + "!";
+}
+
+console.log(Greet("Xin chao", "Eric &", "Hoi dan it")); // returns "Hello Steve, Bill!"
+
+//Greet("Hello");// returns "Hello !"
+
+
+
 //lesson 30
 
 let sum7 = (x: number, y: number, z: boolean = false) => {

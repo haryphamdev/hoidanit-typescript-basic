@@ -1,33 +1,44 @@
-//lesson 36
-class Person2 {
-    private _age: number;
-    public firstName: string;
-    public lastName: string;
+//lesson 37
 
-    constructor(_age: number, firstName: string, lastName: string) {
-        this._age = _age;
+class Person3 {
+    firstName: string;
+    lastName: string;
+
+    constructor(firstName: string, lastName: string) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-
-    //getter
-    get age() {
-        return this._age;
+    getFullName(): string {
+        return `${this.firstName} ${this.lastName}`;
     }
-
-    //setter
-    set age(age2: number) {
-        if (age2 < 0 || age2 > 150) {
-            throw Error("Invalid age")
-        }
-        this._age = age2;
+    describe(): string {
+        return `This is ${this.firstName} ${this.lastName}.`;
     }
 }
 
-let person2 = new Person2(25, 'Hoi Dan IT', 'Eric');
-let checkAge = person2.age; //getter
+//để kế thừa 1 class, chúng ta sử dụng keyword extends
 
-person2.age = 69 // setter
-// person2.setAge(69) //setter
-console.log(">>> check age: ", person2) //getter
-// person2.age = 26;
+class Employee1 extends Person3 {
+    private jobTitle;
+    constructor(
+        firstName: string,
+        lastName: string,
+        jobTitle: string) {
+
+        // call the constructor of the Person class:
+        super(firstName, lastName);
+        this.jobTitle = jobTitle;
+    }
+    //overwrite
+    describe(): string {
+        return `${super.describe()} from parent - describe Hoi Dan IT`;
+    }
+}
+
+// let employee = new Employee('John','Doe','Front-end Developer');
+
+//Employee kết thừa lại person => dùng đc method của parent
+let employee = new Employee1('Hoi Dan IT', 'Eric', 'Web Developer');
+
+console.log(employee.getFullName());
+console.log(employee.describe());

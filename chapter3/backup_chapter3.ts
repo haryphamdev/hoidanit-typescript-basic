@@ -1,3 +1,48 @@
+//lesson 34
+class Employee {
+    public empName: string;
+    protected empCode: number;
+
+    constructor(name: string, code: number) {
+        this.empName = name;
+        this.empCode = code;
+    }
+}
+
+
+class SalesEmployee extends Employee {
+    private department: string;
+
+    constructor(name: string, code: number, department: string) {
+        super(name, code);
+        this.department = department;
+    }
+}
+
+let emp = new SalesEmployee("John Smith", 123, "Sales");
+// emp.empCode; //Compiler Error
+
+//lesson33
+class Person {
+    public ssn: string;
+    firstName: string;
+    lastName: string;
+
+    constructor(ssn: string, firstName: string, lastName: string) {
+        this.ssn = ssn;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    getFullName(): string {
+        return `calling method: ${this.firstName} ${this.lastName}`;
+    }
+}
+
+let hoidanit = new Person("123", "Hoi Dan IT", " Eric");
+console.log(">> check class: ", hoidanit.getFullName())
+
+
 //lesson 32
 
 function addNumbers(a: number, b: number): number {

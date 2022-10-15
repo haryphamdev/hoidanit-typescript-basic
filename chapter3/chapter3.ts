@@ -1,12 +1,23 @@
-//lesson 38
-class Circle {
-    static pi: number = 3.14;
-    public test: number = 69;
-
-    static calculateArea(radius: number) {
-        return this.pi * radius * radius;
-    }
+//lesson 40
+interface IPerson {
+    readonly firstName: string;
+    lastName?: string;
+    address: string
 }
 
-let t = new Circle();
-console.log(">>> check pi= ", Circle.calculateArea(10));
+type Person41 = {
+    firstName: string;
+    lastName: string
+}
+
+function getFullName(person: IPerson) {
+    return `${person.firstName} ${person.lastName}`;
+}
+
+let person40 = {
+    firstName: 'Eric',
+    lastName: 'Hoi Dan IT',
+    address: 'Ha noi'
+};
+
+console.log(getFullName(person40)); // Eric Hoi Dan IT
